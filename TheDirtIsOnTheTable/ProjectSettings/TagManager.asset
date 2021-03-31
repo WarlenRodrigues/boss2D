@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - defense
+  - bullet
+  - platform
+  - target
+  - floor
   layers:
   - Default
   - TransparentFX
@@ -38,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 4132719093
+    locked: 1
   - name: Default
     uniqueID: 0
     locked: 0
