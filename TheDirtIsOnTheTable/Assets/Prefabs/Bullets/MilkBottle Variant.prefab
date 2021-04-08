@@ -63,7 +63,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 145093078, guid: 78c81d6a1f70eba458ed18ac18870f40, type: 3}
       propertyPath: m_Frequency
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 145093078, guid: 78c81d6a1f70eba458ed18ac18870f40, type: 3}
       propertyPath: m_ConnectedRigidBody

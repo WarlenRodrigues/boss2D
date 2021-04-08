@@ -39,14 +39,14 @@ public class GameManager
         changeStateDelegate();
     }
 
-    private void Reset()
+    public void Reset()
     {
     pontos = 0;
     SceneManager.LoadScene("StartGameScene");
     gameState = GameState.GAME;
     }
 
-    private void passLevel()
+    public void passLevel()
     {
     unlockedLevels++;
     Reset();

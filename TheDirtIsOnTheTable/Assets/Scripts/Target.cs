@@ -5,10 +5,13 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
 
+    GameManager gm;
     public static int TargetsOverTheTable = 0;
     void Start()
     {
+        gm = GameManager.GetInstance();
         TargetsOverTheTable++;
+
     }
 
 
@@ -26,6 +29,7 @@ public class Target : MonoBehaviour
 
         if (TargetsOverTheTable <= 0)
             Debug.Log("WON");
+            gm.passLevel();
 
         Destroy(gameObject);
 

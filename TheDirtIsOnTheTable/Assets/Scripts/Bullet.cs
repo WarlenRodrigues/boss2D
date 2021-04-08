@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    GameManager gm;
+
     public Rigidbody2D rb;
     public Rigidbody2D slingShot;
     public GameObject nextBullet;
@@ -13,6 +15,10 @@ public class Bullet : MonoBehaviour
 
 
     private bool isPressed = false;
+
+    private void Start() {
+        gm = GameManager.GetInstance();
+    }
 
     private void Update()
     {
@@ -48,7 +54,7 @@ public class Bullet : MonoBehaviour
         GetComponent<SpringJoint2D>().enabled = false;
         this.enabled = false;
 
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
 
         if (nextBullet != null)
         {
@@ -58,6 +64,8 @@ public class Bullet : MonoBehaviour
         {
             Target.TargetsOverTheTable = 0;
             Debug.Log("LOST");
+            gm.Reset();
+
         }
     }
 }
