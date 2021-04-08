@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 public class BackButtonScript : MonoBehaviour
 {
 
-    public void backToMainMenu() {
+    GameManager gm;
+
+
+    public void selectLevels() {
+        gm = GameManager.GetInstance();
+        gm.ChangeState(GameManager.GameState.GAME);
         SceneManager.LoadScene("StartGameScene");
     }
 }

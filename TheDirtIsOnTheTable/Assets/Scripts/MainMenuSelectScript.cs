@@ -13,10 +13,10 @@ public class MainMenuSelectScript : MonoBehaviour
                 SceneManager.LoadScene("ExampleScene");
                 break;
             case "Level2Button":
-                SceneManager.LoadScene("Transition2");
+                SceneManager.LoadScene("ExampleScene");
                 break;
             case "Level3Button":
-                SceneManager.LoadScene("Transition3");
+                SceneManager.LoadScene("ExampleScene");
                 break;
 
         }
