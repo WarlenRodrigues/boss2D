@@ -9,3 +9,7 @@
 - [Recycle Items](https://opengameart.org/content/recycle-items-set)
 
 - [Table](https://opengameart.org/content/table-to-do-the-only-thing-worth-it-in-life)
+
+
+### Documentation
+- [GDD](https://docs.google.com/document/d/1qmFuAcXi8vnElTWXpIpGoTf-n4muAUE9BbnGDW3kVZM/edit?usp=sharing)
