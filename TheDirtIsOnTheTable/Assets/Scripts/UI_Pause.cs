@@ -26,9 +26,9 @@ public class UI_Pause : MonoBehaviour
 
     public void Inicio()
     {
-        SceneManager.LoadScene("StartGameScene");
         gm.ChangeState(GameManager.GameState.GAME);
         gm.Reset();
+        SceneManager.LoadScene("StartGameScene");
     }
 
 }

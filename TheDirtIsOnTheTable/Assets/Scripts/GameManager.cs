@@ -26,6 +26,7 @@ public class GameManager
 
         return _instance;
     }
+
     private GameManager()
     {
         unlockedLevels = 1;
