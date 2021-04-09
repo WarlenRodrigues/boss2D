@@ -29,7 +29,8 @@ public class Target : MonoBehaviour
 
         if (TargetsOverTheTable <= 0)
             Debug.Log("WON");
-            gm.passLevel();
+        gm.ChangeState(GameManager.GameState.ENDGAMEWIN);
+        gm.passLevel();
 
         Destroy(gameObject);
 

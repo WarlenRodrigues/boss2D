@@ -16,7 +16,8 @@ public class Bullet : MonoBehaviour
 
     private bool isPressed = false;
 
-    private void Start() {
+    private void Start()
+    {
         gm = GameManager.GetInstance();
     }
 
@@ -63,9 +64,8 @@ public class Bullet : MonoBehaviour
         else
         {
             Target.TargetsOverTheTable = 0;
-            Debug.Log("LOST");
-            gm.Reset();
-
+            gm.ChangeState(GameManager.GameState.ENDGAMELOST);
+            // gm.Reset();
         }
     }
 }

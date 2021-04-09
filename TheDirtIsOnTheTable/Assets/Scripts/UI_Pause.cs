@@ -28,6 +28,7 @@ public class UI_Pause : MonoBehaviour
     {
         SceneManager.LoadScene("StartGameScene");
         gm.ChangeState(GameManager.GameState.GAME);
+        gm.Reset();
     }
 
 }
