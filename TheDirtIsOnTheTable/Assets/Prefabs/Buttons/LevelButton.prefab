@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8478692490018317321}
   - component: {fileID: 3483618988881430924}
   - component: {fileID: 5401914639641424325}
+  - component: {fileID: 3269665032696550053}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -77,7 +78,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 1
+  m_Text: 1
+--- !u!114 &3269665032696550053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3002312311101764102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cc84e25dd1b634abdb787ba47c98d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7678614426086639557
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,8 +103,9 @@ GameObject:
   - component: {fileID: 6574559453382187504}
   - component: {fileID: 9129943414709063591}
   - component: {fileID: 8222433348645630906}
+  - component: {fileID: 7998400017926471095}
   m_Layer: 5
-  m_Name: Level1Button
+  m_Name: LevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,8 +128,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 12.971}
-  m_SizeDelta: {x: -261.9763, y: 25.942047}
+  m_AnchoredPosition: {x: -49.63, y: 12.971}
+  m_SizeDelta: {x: -361.241, y: 25.942047}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6574559453382187504
 CanvasRenderer:
@@ -196,4 +210,27 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9129943414709063591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7998400017926471095}
+        m_MethodName: selectScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7998400017926471095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7678614426086639557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cc84e25dd1b634abdb787ba47c98d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
