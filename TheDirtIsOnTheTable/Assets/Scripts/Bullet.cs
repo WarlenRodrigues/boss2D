@@ -19,6 +19,11 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         gm = GameManager.GetInstance();
+        gm.bullets++;
+        rb = this.GetComponent<Rigidbody2D>();
+        slingShot = GameObject.FindWithTag("player").GetComponent<Rigidbody2D>();
+        SpringJoint2D springJoint = this.GetComponent<SpringJoint2D>();
+        springJoint.connectedBody = slingShot.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -57,6 +62,7 @@ public class Bullet : MonoBehaviour
 
         yield return new WaitForSeconds(3.0f);
 
+        gm.bullets--;
         if (nextBullet != null)
         {
             nextBullet.SetActive(true);
@@ -65,7 +71,6 @@ public class Bullet : MonoBehaviour
         {
             Target.TargetsOverTheTable = 0;
             gm.ChangeState(GameManager.GameState.ENDGAMELOST);
-            // gm.Reset();
         }
     }
 }

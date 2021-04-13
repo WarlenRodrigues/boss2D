@@ -11,6 +11,7 @@ public class GameManager
     public GameState gameState { get; private set; }
     public int unlockedLevels;
     public int pontos;
+    public int bullets;
 
     public delegate void ChangeStateDelegate();
     public static ChangeStateDelegate changeStateDelegate;
@@ -32,6 +33,7 @@ public class GameManager
         unlockedLevels = 1;
         pontos = 0;
         gameState = GameState.GAME;
+        bullets = 0;
     }
 
     public void ChangeState(GameState nextState)
@@ -43,6 +45,7 @@ public class GameManager
     public void Reset()
     {
         pontos = 0;
+        bullets = 0;
         gameState = GameState.GAME;
     }
 
