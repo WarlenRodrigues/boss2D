@@ -22,7 +22,7 @@ public class LevelsSpawner : MonoBehaviour
         Rect panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
         Rect buttonDimensions = LevelButton.GetComponent<RectTransform>().rect;
 
-        float unitSlot = panelDimensions.width / 12;
+        float unitSlot = panelDimensions.width / 13;
         LevelButton.GetComponent<RectTransform>().sizeDelta = new Vector2(3 * unitSlot, buttonDimensions.height);
 
         float zeroX = -panelDimensions.x + (buttonDimensions.width / 2) + unitSlot;
