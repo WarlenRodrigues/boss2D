@@ -19,7 +19,7 @@ public class LevelsSpawner : MonoBehaviour
         {
             for (int j = 0; j < 3; j++)
             {
-                Vector3 posicao = new Vector3(110 + 140f * i, 140 - 40f * j);
+                Vector3 posicao = new Vector3(80 + 80f * i, 160 - 40f * j);
                 GameObject level = Instantiate(LevelButton, posicao, Quaternion.identity, transform);
                 level.name = "Level" + (1 + i + j);
                 level.GetComponentInChildren<Text>().text = "Level " + (1 + i + j);
