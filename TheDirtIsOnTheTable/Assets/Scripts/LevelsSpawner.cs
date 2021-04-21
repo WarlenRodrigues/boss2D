@@ -9,8 +9,6 @@ public class LevelsSpawner : MonoBehaviour
     public GameObject LevelButton;
     public GameObject levelHolder;
 
-    public int zeroXRender = 0;
-    public int zeroYRender = 0;
 
 
     void Start()
@@ -20,19 +18,28 @@ public class LevelsSpawner : MonoBehaviour
 
     void Construir()
     {
-        int levelNumber = 0;
+        int levelNumber = 1;
         Rect panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
         Rect buttonDimensions = LevelButton.GetComponent<RectTransform>().rect;
 
-        Debug.Log(panelDimensions);
+        float unitSlot = panelDimensions.width / 12;
+        LevelButton.GetComponent<RectTransform>().sizeDelta = new Vector2(3 * unitSlot, buttonDimensions.height);
+
+        float zeroX = -panelDimensions.x + (buttonDimensions.width / 2) + unitSlot;
+
+        float zeroY = -panelDimensions.y;
+
         for (int i = 0; i < 3; i++)
         {
+            int howManyButtons = 0;
             for (int j = 0; j < 3; j++)
             {
-                Vector3 posicao = new Vector3((-panelDimensions.x + buttonDimensions.width / 2) + 80f * i, -panelDimensions.y - 40f * j);
+                Vector3 posicao = new Vector3(zeroX + (3 * unitSlot * howManyButtons) + (unitSlot * howManyButtons), zeroY - 40f * i);
                 GameObject level = Instantiate(LevelButton, posicao, Quaternion.identity, transform);
                 level.name = "Level" + levelNumber;
-                level.GetComponentInChildren<Text>().text = "Level " + (1 + i + j + levelNumber);
+                level.GetComponentInChildren<Text>().text = "Level " + levelNumber;
+                levelNumber++;
+                howManyButtons++;
             }
         }
     }
