@@ -16,16 +16,19 @@ public class UI_Pause : MonoBehaviour
 
     public void setPause()
     {
+        Time.timeScale = 0;
         gm.ChangeState(GameManager.GameState.PAUSE);
     }
 
     public void Retornar()
     {
+        Time.timeScale = 1;
         gm.ChangeState(GameManager.GameState.GAME);
     }
 
     public void Inicio()
     {
+        Time.timeScale = 1;
         gm.Reset();
         SceneManager.LoadScene("StartGameScene");
     }
