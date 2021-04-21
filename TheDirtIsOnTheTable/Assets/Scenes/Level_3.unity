@@ -433,7 +433,7 @@ PrefabInstance:
     - target: {fileID: 8897368511993465860, guid: 66cfb324c24dca74a85bdf220abf2035,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66cfb324c24dca74a85bdf220abf2035, type: 3}
@@ -538,7 +538,7 @@ PrefabInstance:
     - target: {fileID: 8897368511993465860, guid: 66cfb324c24dca74a85bdf220abf2035,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66cfb324c24dca74a85bdf220abf2035, type: 3}
@@ -1500,6 +1500,11 @@ PrefabInstance:
       propertyPath: nextBullet
       value: 
       objectReference: {fileID: 167220525}
+    - target: {fileID: 6887010435832762270, guid: 66cfb324c24dca74a85bdf220abf2035,
+        type: 3}
+      propertyPath: disableBullet
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6887010435832762271, guid: 66cfb324c24dca74a85bdf220abf2035,
         type: 3}
       propertyPath: m_Distance

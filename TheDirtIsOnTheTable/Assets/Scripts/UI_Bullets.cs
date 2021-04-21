@@ -21,7 +21,7 @@ public class UI_Bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textComp.text = $"{gm.bullets}";
+        textComp.text = $"{gm.bullets - 1}";
     }
 
 }

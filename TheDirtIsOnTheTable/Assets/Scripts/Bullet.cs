@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+ 
 public class Bullet : MonoBehaviour
 {
     GameManager gm;
@@ -12,14 +12,22 @@ public class Bullet : MonoBehaviour
 
     public float releaseTime = 0.15f;
     public float maxDragDistance = 2.0f;
+    public bool disableBullet = true;
 
 
     private bool isPressed = false;
-
     private void Start()
     {
         gm = GameManager.GetInstance();
         gm.bullets++;
+        if (disableBullet)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void OnEnable()
+    {
         rb = this.GetComponent<Rigidbody2D>();
         slingShot = GameObject.FindWithTag("player").GetComponent<Rigidbody2D>();
         SpringJoint2D springJoint = this.GetComponent<SpringJoint2D>();
@@ -60,8 +68,8 @@ public class Bullet : MonoBehaviour
         GetComponent<SpringJoint2D>().enabled = false;
         this.enabled = false;
 
-        yield return new WaitForSeconds(3.0f);
-
+        yield return new WaitForSeconds(3.5f);
+        
         gm.bullets--;
         if (nextBullet != null)
         {
