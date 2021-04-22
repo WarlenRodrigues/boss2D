@@ -9,10 +9,14 @@ public class LevelsSpawner : MonoBehaviour
     public GameObject LevelButton;
     public GameObject levelHolder;
 
+    GameManager gm;
+
 
 
     void Start()
     {
+        gm = GameManager.GetInstance();
+
         Construir();
     }
 
@@ -22,24 +26,34 @@ public class LevelsSpawner : MonoBehaviour
         Rect panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
         Rect buttonDimensions = LevelButton.GetComponent<RectTransform>().rect;
 
-        float unitSlot = panelDimensions.width / 13;
-        LevelButton.GetComponent<RectTransform>().sizeDelta = new Vector2(3 * unitSlot, buttonDimensions.height);
+        float unitWidthSlot = panelDimensions.width / 13;
+        float unitHeigthSlot = panelDimensions.height / 13;
 
-        float zeroX = -panelDimensions.x + (buttonDimensions.width / 2) + unitSlot;
+        float maxHeigth = 20.0f;
 
-        float zeroY = -panelDimensions.y;
+        if (unitHeigthSlot < maxHeigth)
+        {
+            maxHeigth = unitHeigthSlot;
+        }
+
+        LevelButton.GetComponent<RectTransform>().sizeDelta = new Vector2(3 * unitWidthSlot, 2 * maxHeigth);
+
+        float zeroX = -panelDimensions.x + (buttonDimensions.width / 2) + unitWidthSlot;
+        float zeroY = -panelDimensions.y - unitHeigthSlot;
 
         for (int i = 0; i < 3; i++)
         {
-            int howManyButtons = 0;
             for (int j = 0; j < 3; j++)
             {
-                Vector3 posicao = new Vector3(zeroX + (3 * unitSlot * howManyButtons) + (unitSlot * howManyButtons), zeroY - 40f * i);
+                Vector3 posicao = new Vector3(zeroX + (3 * unitWidthSlot * j) + (unitWidthSlot * j), zeroY - (3 * unitHeigthSlot * i) - (unitHeigthSlot * i));
                 GameObject level = Instantiate(LevelButton, posicao, Quaternion.identity, transform);
                 level.name = "Level" + levelNumber;
                 level.GetComponentInChildren<Text>().text = "Level " + levelNumber;
+                if (levelNumber > gm.unlockedLevels)
+                {
+                    level.GetComponent<Button>().interactable = false;
+                }
                 levelNumber++;
-                howManyButtons++;
             }
         }
     }
