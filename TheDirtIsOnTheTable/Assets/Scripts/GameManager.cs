@@ -51,13 +51,29 @@ public class GameManager
         gameState = GameState.GAME;
     }
 
-    public void passLevel()
+    public void PassLevel()
     {
         if (currentLevel == unlockedLevels)
         {
             unlockedLevels++;
         }
-        // Reset();
+    }
+
+    public void lost() {
+        if (gameState != GameState.ENDGAMEWIN)
+        {   
+            Debug.Log("LOST");
+            Debug.Log(gameState);
+            Target.TargetsOverTheTable = 0;
+            ChangeState(GameState.ENDGAMELOST);
+        }
+    }
+
+    public void win(){
+        Debug.Log("WIN");
+        Target.TargetsOverTheTable = 0;
+        ChangeState(GameState.ENDGAMEWIN);
+        PassLevel();
     }
 
     public void setCurrentLevel(int level) {
