@@ -12,6 +12,7 @@ public class GameManager
     public int unlockedLevels;
     public int pontos;
     public int bullets;
+    public int currentLevel;
 
     public delegate void ChangeStateDelegate();
     public static ChangeStateDelegate changeStateDelegate;
@@ -30,7 +31,8 @@ public class GameManager
 
     private GameManager()
     {
-        unlockedLevels = 1;
+        currentLevel = 1;
+        unlockedLevels = currentLevel;
         pontos = 0;
         gameState = GameState.GAME;
         bullets = 0;
@@ -51,8 +53,15 @@ public class GameManager
 
     public void passLevel()
     {
-        unlockedLevels++;
+        if (currentLevel == unlockedLevels)
+        {
+            unlockedLevels++;
+        }
         // Reset();
+    }
+
+    public void setCurrentLevel(int level) {
+        currentLevel = level;
     }
 
 }

@@ -69,13 +69,14 @@ public class Bullet : MonoBehaviour
         this.enabled = false;
 
         yield return new WaitForSeconds(3.5f);
+        Debug.Log(gm.gameState);
         
         gm.bullets--;
         if (nextBullet != null)
         {
             nextBullet.SetActive(true);
         }
-        else
+        else if (gm.gameState != GameManager.GameState.ENDGAMEWIN)
         {
             Target.TargetsOverTheTable = 0;
             gm.ChangeState(GameManager.GameState.ENDGAMELOST);
