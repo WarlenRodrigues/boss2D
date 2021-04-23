@@ -8,6 +8,8 @@ public class UI_Pause : MonoBehaviour
 {
 
     GameManager gm;
+    public AudioClip clickSound;
+
 
     private void OnEnable()
     {
@@ -22,12 +24,16 @@ public class UI_Pause : MonoBehaviour
 
     public void Retornar()
     {
+        IngameAudioManager.PlaySFX(clickSound);
+
         Time.timeScale = 1;
         gm.ChangeState(GameManager.GameState.GAME);
     }
 
     public void Inicio()
     {
+        IngameAudioManager.PlaySFX(clickSound);
+
         Time.timeScale = 1;
         gm.Reset();
         SceneManager.LoadScene("StartGameScene");

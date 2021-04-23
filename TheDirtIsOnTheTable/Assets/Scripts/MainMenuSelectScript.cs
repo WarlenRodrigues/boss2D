@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuSelectScript : MonoBehaviour
 {
     GameManager gm;
+    public AudioClip clickSound;
+
 
     void Start()
     {
@@ -14,6 +16,8 @@ public class MainMenuSelectScript : MonoBehaviour
 
     public void selectScene()
     {
+        IngameAudioManager.PlaySFX(clickSound);
+
         switch (this.gameObject.name)
         {
             case "Level1":
