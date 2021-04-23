@@ -10,6 +10,8 @@
 
 - [Table](https://opengameart.org/content/table-to-do-the-only-thing-worth-it-in-life)
 
+- [DJ and Speakers](https://opengameart.org/content/assorted-disco-pixel-art)
+
 
 ### Documentation
 - [GDD](https://docs.google.com/document/d/1qmFuAcXi8vnElTWXpIpGoTf-n4muAUE9BbnGDW3kVZM/edit?usp=sharing)
