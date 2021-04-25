@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1482085559be9e4c9a4d9d3d9c5d31c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glassSound: {fileID: 8300000, guid: a947e2311a9d03b4d846f1493d53c813, type: 3}
 --- !u!61 &-2065384700871519782
 BoxCollider2D:
   m_ObjectHideFlags: 0

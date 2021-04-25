@@ -5,6 +5,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
 
+    public AudioClip glassSound;
     GameManager gm;
     public static int TargetsOverTheTable = 0;
     void Start()
@@ -25,7 +26,7 @@ public class Target : MonoBehaviour
     private void Die()
     {
         TargetsOverTheTable--;
-
+        IngameAudioManager.PlaySFX(glassSound);
         if (TargetsOverTheTable <= 0)
         {
             gm.win();
