@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager
 {
 
@@ -53,15 +54,21 @@ public class GameManager
 
     public void PassLevel()
     {
+        if (unlockedLevels > 9)
+        {
+            SceneManager.LoadScene("FinishGameScene");
+        }
+
         if (currentLevel == unlockedLevels)
         {
             unlockedLevels++;
         }
     }
 
-    public void lost() {
+    public void lost()
+    {
         if (gameState != GameState.ENDGAMEWIN)
-        {   
+        {
             Debug.Log("LOST");
             Debug.Log(gameState);
             Target.TargetsOverTheTable = 0;
@@ -69,14 +76,16 @@ public class GameManager
         }
     }
 
-    public void win(){
+    public void win()
+    {
         Debug.Log("WIN");
         Target.TargetsOverTheTable = 0;
         ChangeState(GameState.ENDGAMEWIN);
         PassLevel();
     }
 
-    public void setCurrentLevel(int level) {
+    public void setCurrentLevel(int level)
+    {
         currentLevel = level;
     }
 
