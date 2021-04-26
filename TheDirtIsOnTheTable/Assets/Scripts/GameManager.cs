@@ -15,6 +15,8 @@ public class GameManager
     public int bullets;
     public int currentLevel;
 
+    private bool showFinishScreen;
+
     public delegate void ChangeStateDelegate();
     public static ChangeStateDelegate changeStateDelegate;
 
@@ -37,6 +39,7 @@ public class GameManager
         pontos = 0;
         gameState = GameState.GAME;
         bullets = 0;
+        showFinishScreen = true;
     }
 
     public void ChangeState(GameState nextState)
@@ -54,15 +57,20 @@ public class GameManager
 
     public void PassLevel()
     {
-        if (unlockedLevels > 9)
+        if (unlockedLevels > 8 && showFinishScreen)
         {
+            showFinishScreen = false;
             SceneManager.LoadScene("FinishGameScene");
         }
-
-        if (currentLevel == unlockedLevels)
+        else
         {
-            unlockedLevels++;
+
+            if (currentLevel == unlockedLevels)
+            {
+                unlockedLevels++;
+            }
         }
+
     }
 
     public void lost()
